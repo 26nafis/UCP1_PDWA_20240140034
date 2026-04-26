@@ -1,12 +1,75 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>registrasi</title>
-</head>
-<body>
-    <h1>Login</h1>
-   
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Anggota - Tech Community</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="container py-4">
+    <h2>Form Pendaftaran Anggota</h2>
+    <hr />
+
+    <form id="memberForm" class="col-md-6">
+      <div class="mb-3">
+        <label>Nama Lengkap:</label>
+        <input type="text" id="nama" class="form-control" required />
+      </div>
+      <div class="mb-3">
+        <label>Email:</label>
+        <input type="email" id="email" class="form-control" required />
+      </div>
+      <div class="mb-3">
+        <label>Bidang Minat:</label>
+        <select id="bidang" class="form-select">
+          <option value="Web Developer">Web Developer</option>
+          <option value="Data Scientist">Data Scientist</option>
+          <option value="Network Engineer">Network Engineer</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-success">Simpan Data</button>
+      <a href="./index.html" class="btn btn-secondary">Kembali</a>
+    </form>
+
+    <div id="hasilInput" class="mt-4 p-3 border d-none">
+      <h4>Hasil Input Terakhir:</h4>
+      <p id="info"></p>
+    </div>
+
+    <script>
+      let dataAnggota = JSON.parse(localStorage.getItem("dataAnggota")) || [];
+
+      document
+        .getElementById("memberForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const email = document.getElementById("email").value;
+          const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+          if (!emailPattern.test(email)) {
+            alert(
+              "Email tidak valid! Harap masukkan email dengan format yang benar.",
+            );
+            return;
+          }
+
+          const maba = {
+            nama: document.getElementById("nama").value,
+            email: email,
+            bidang: document.getElementById("bidang").value,
+          };
+
+          dataAnggota.push(maba);
+          localStorage.setItem("dataAnggota", JSON.stringify(dataAnggota));
+          alert("Data " + maba.nama + " Berhasil Disimpan!");
+
+          document.getElementById("info").innerHTML =
+            `Nama: ${maba.nama} <br> Email: ${maba.email} <br> Bidang: ${maba.bidang}`;
+          document.getElementById("hasilInput").classList.remove("d-none");
+
+          this.reset();
+        });
+    </script>
+  </body>
 </html>

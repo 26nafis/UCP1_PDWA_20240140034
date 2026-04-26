@@ -1,22 +1,65 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tech Community</title>
-</head>
-<body>
-    <h1 styel=padding:20, width="20" > Datang Di Website </h1>
-    <h1>BLOG TECH COMMUNITY </h1>
-    <p>ini adalah website untuk para programer dan anak-anak it banget </p>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="container py-4">
+    <header class="hero">
+      <h1 class="hero-title">Selamat Datang Di Website</h1>
+      <h1 class="hero-brand">BLOG TECH COMMUNITY</h1>
+      <p class="hero-desc">
+        ini adalah website untuk para programer dan anak-anak it banget
+      </p>
+    </header>
+
+    <nav class="mb-4">
+      <a href="./index.html" class="btn btn-dark">Home</a>
+      <a href="./form.html" class="btn btn-outline-primary">Daftar Anggota</a>
+      <a href="./gallery.html" class="btn btn-outline-primary">Multimedia</a>
+    </nav>
+
     <h2>Anggota Tech Community</h2>
-    <table>1.nama: Nafis spalanzani indiarto</table>
-    <table>email: spalanzanimpis@gmail.com</table>
-    <table>bidang: developer</table>
-    <table>2.nama: heru</table>
-    <table>email: haru112233@gmail.com</table>
-    <table>bidang: backend </table>
-    <button onclick= href: ></button>
-    
-</body>
+    <table class="table table-bordered table-striped mt-3">
+      <thead class="table-dark">
+        <tr>
+          <th>No</th>
+          <th>Nama</th>
+          <th>Email</th>
+          <th>Bidang</th>
+        </tr>
+      </thead>
+      <tbody id="tabel-anggota">
+        <tr>
+          <td>1</td>
+          <td>Nafis spalanzani indiarto</td>
+          <td>spalanzanimpis@gmail.com</td>
+          <td>developer</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>heru</td>
+          <td>haru112233@gmail.com</td>
+          <td>backend</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <script>
+      const anggotaTambahan = [
+        { nama: "Budi", email: "budi@tech.com", bidang: "Cyber Security" },
+      ];
+
+      const dataStorage = JSON.parse(localStorage.getItem("dataAnggota")) || [];
+      const semuaAnggota = [...anggotaTambahan, ...dataStorage];
+
+      const table = document.getElementById("tabel-anggota");
+      semuaAnggota.forEach((item, index) => {
+        let row = `<tr><td>${index + 3}</td><td>${item.nama}</td><td>${item.email}</td><td>${item.bidang}</td></tr>`;
+        table.innerHTML += row;
+      });
+    </script>
+  </body>
 </html>

@@ -1,0 +1,201 @@
+/* style.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.btn {
+  display: inline-block;
+  background-color: #712cf9;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.btn:hover {
+  background-color: #0d0818;
+  color: white;
+}
+
+.btn-secondary {
+  background-color: #712cf9;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: #0d0818;
+  color: white;
+}
+
+.btn-success {
+  background-color: #712cf9;
+  color: white;
+}
+
+.btn-success:hover {
+  background-color: #0d0818;
+  color: white;
+}
+
+body {
+  background-color: #1a1d20; /* Warna gelap Bootstrap Blog */
+  color: #dee2e6;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+  padding: 40px 20px;
+  text-align: center; /* Menengahkan teks ke tengah halaman */
+  margin-bottom: 40px; /* Memberi jarak bawah */
+  display: block; /* Memastikan elemen mengambil ruang satu baris penuh */
+  width: 100%; /* Mengatur lebar penuh agar center berfungsi maksimal */
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center; /* Menengahkan teks ke tengah halaman */
+  margin-bottom: 20px; /* Memberi jarak bawah */
+  display: block; /* Memastikan elemen mengambil ruang satu baris penuh */
+  width: 100%; /* Mengatur lebar penuh agar center berfungsi maksimal */
+}
+
+/* Navigasi Ungu */
+nav {
+  background-color: #712cf9; /* Ungu khas Bootstrap */
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+nav a:hover {
+  color: #d1d1d1;
+}
+
+/* Judul & Teks */
+h1 {
+  color: #ffffff;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+h2 {
+  color: #712cf9;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+/* Tabel Dark Mode */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #212529;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th {
+  background-color: #343a40;
+  color: #712cf9;
+  text-align: left;
+  padding: 15px;
+}
+
+td {
+  padding: 15px;
+  border-bottom: 1px solid #373b3e;
+}
+
+/* Form & Input */
+input,
+select {
+  width: 100%;
+  padding: 12px;
+  background-color: #2b3035;
+  border: 1px solid #495057;
+  color: white;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+button {
+  background-color: #712cf9;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #0d0818;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, #712cf9 0%, #4a1d9e 100%);
+  padding: 80px 40px;
+  border-radius: 16px;
+  margin-bottom: 40px;
+  box-shadow: 0 10px 40px rgba(113, 44, 249, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.1) 0%,
+    transparent 60%
+  );
+  pointer-events: none;
+}
+
+.hero-title {
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.hero-brand {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 20px;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  letter-spacing: 2px;
+}
+
+.hero-desc {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.8;
+  font-weight: 400;
+}
